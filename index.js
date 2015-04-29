@@ -210,6 +210,7 @@ Command.prototype.addImplicitHelpCommand = function() {
 Command.prototype.parseExpectedArgs = function(args) {
   if (!args.length) return;
   var self = this;
+  self.setMaxListeners(0);
   args.forEach(function(arg) {
     var argDetails = {
       required: false,
